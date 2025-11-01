@@ -1,15 +1,17 @@
 {
   "name": "angular-starter",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
+    "build": "ng build",
+    "chores": "npm run lint && npm run format",
+    "format": "sort-package-json && ng-perfectionism && prettier --w **/*.json src/**/*.{ts,html,scss} && sort-patterns-file .gitignore .prettierignore -i node_modules",
+    "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "watch": "ng build --watch --configuration development"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^20.3.9",
     "@angular/common": "^20.3.9",
@@ -28,16 +30,22 @@
     "@angular/cli": "^20.3.8",
     "@angular/compiler-cli": "^20.3.9",
     "@chris.araneo/eslint-config": "^0.0.65",
+    "@chris.araneo/ng-perfectionism": "^0.0.10",
+    "@chris.araneo/sort-patterns-file": "^0.0.9",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "20.5.0",
     "eslint": "^9.38.0",
+    "eslint-plugin-jsonc": "^2.21.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "jasmine-core": "~5.4.0",
+    "jsonc-eslint-parser": "^2.4.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.6.2",
+    "sort-package-json": "^3.4.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "8.46.1"
   }
